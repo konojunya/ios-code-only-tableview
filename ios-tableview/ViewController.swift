@@ -16,7 +16,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView = {
+        self.tableView = { [weak self] in
+            guard let `self` = self else { return UITableView() }
             let tableView = UITableView(frame: self.view.bounds, style: .plain)
             tableView.autoresizingMask = [
                 .flexibleWidth,
