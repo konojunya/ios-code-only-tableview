@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var tableView: UITableView?
-    let datas = ["Apple","Banana","Orange"]
+    let items = ["Apple","Banana","Orange"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.datas.count
+        return self.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,14 +49,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         ?? UITableViewCell(style: .default, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = self.datas[indexPath.row]
+        cell.textLabel?.text = self.items[indexPath.row]
         
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected! \(self.datas[indexPath.row])")
+        print("Selected! \(self.items[indexPath.row])")
     }
 
 
