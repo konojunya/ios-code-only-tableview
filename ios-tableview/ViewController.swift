@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var tableView: UITableView?
+    var tableView: UITableView!
     let items = ["Apple","Banana","Orange"]
 
     override func viewDidLoad() {
